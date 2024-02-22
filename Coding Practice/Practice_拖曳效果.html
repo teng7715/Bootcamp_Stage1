@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice_拖曳效果</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            
+            position: fixed;
+            left:100px;
+            top:100px; 
+        }
+    </style>
+</head>
+
+<body>
+    <b>練習拖曳的效果</b>
+    <div id="box" class="box"></div>
+    <script>
+        
+        let box=document.querySelector("#box")
+
+        let startdrag=function(t){
+            document.addEventListener("mousemove",drag)
+        }
+
+
+        let drag=function(t){
+            box.style.left=(t.clientX-10)+"px"
+            box.style.top=(t.clientY-10)+"px"
+            box.style.backgroundColor="blue"
+        }
+
+        let drop=function(t){
+            document.removeEventListener("mousemove",drag)
+            box.style.backgroundColor="red"
+        }
+
+
+        box.addEventListener("mousedown",startdrag)
+        box.addEventListener("mouseup",drop)
+    </script>
+</body>
+</html>

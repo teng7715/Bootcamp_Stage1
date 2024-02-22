@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"type="text/css" href="Practice_parallax scrolling.css">
+    <script src="https://kit.fontawesome.com/add6c8fc7e.js" crossorigin="anonymous"></script>
+    <title>Practice_Parallax Scrolling視差滾動</title>
+</head>
+<body>
+
+<b>小說明：隨著視窗滾動，星星會以隨機亂數的方式決定位置，並產生視差滾動效果</b>
+<div class="night">
+    <span class="moon" data-speed="1"><i class="fa-solid fa-moon"></i></span>
+
+    <span class="star"><i class="fa-solid fa-star"></i></span>
+    <span class="star"><i class="fa-solid fa-star"></i></span>
+    <span class="star"><i class="fa-solid fa-star"></i></span>
+    <span class="star"><i class="fa-regular fa-star"></i></span>
+    <span class="star"><i class="fa-regular fa-star"></i></span>
+    <span class="star"><i class="fa-regular fa-star"></i></span>
+    <span class="star"><i class="fa-regular fa-star"></i></span>
+
+</div>
+<script>
+    let moon=document.querySelector(".moon")
+    let stars=document.querySelectorAll(".star")
+
+    let starWidth=25.88
+    let windowWidth=window.innerWidth
+    let moonMoveSpeed=moon.dataset.speed
+
+    stars.forEach(
+            function(star){
+                star.style.left=Math.abs(Math.random()*windowWidth-starWidth)+"px";
+                star.dataset.speed=Math.random()-2
+            }
+        )
+
+
+    function setStarandMoonPosition(){
+        let scrollPositionY=window.pageYOffset
+        moon.style.transform=`translateY(${scrollPositionY*moonMoveSpeed}px)`
+
+        stars.forEach(
+            function(star){
+                let starMoveSpeed=star.dataset.speed; 
+                star.style.transform=`translateY(${scrollPositionY*starMoveSpeed}px)`
+            }
+        )
+
+    }
+    window.addEventListener("scroll",setStarandMoonPosition)
+
+
+</script>
+    
+</body>
+</html>

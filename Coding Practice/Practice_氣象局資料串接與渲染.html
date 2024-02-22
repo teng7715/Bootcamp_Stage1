@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice_氣象局資料串接與渲染</title>
+</head>
+<body>
+<h3>串接氣象局的資料</h3>
+<button onclick="getWeatherData()">取得所有縣市資料</button> 
+<div id="result"></div>
+
+    <script>
+        async function getWeatherData(){
+            let response=await fetch("https://opendata.cwa.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWA-7A622059-3E0C-4C7D-BE48-8CC76FD51638")
+            let data=await response.json()
+            console.log(data)
+
+            let result=document.querySelector("#result")
+            let locations=data.records.location
+            for(let i=0;i<locations.length;i++){
+        result.innerHTML=result.innerHTML+"<div>"+locations[i].locationName+":"+locations[i].weatherElement[2].time[0].parameter.parameterName+"~"+locations[i].weatherElement[4].time[0].parameter.parameterName+"</div>"
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+body{
+    margin:0px;
+}
+
+.night {
+    background-color:#24344d;
+    width: 100%;
+    height: 150vh;
+    position: relative 
+}
+
+.moon{
+    font-size: 60px;
+    color: rgb(255, 255, 255);
+    position:absolute;   
+    top: 15px;
+    left: 20px;  
+}
+
+.star{
+    font-size: 23px;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    left: 80px;
+    bottom:0px; 
+}

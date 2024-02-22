@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice_視窗畫面比例改變</title>
+    <style>
+        .layout{
+            display: flex;
+            height: 500px;
+        }
+        .left{
+            width: 100px;
+            background-color: red;
+        }
+        .middle{
+            width: 10px;
+            background-color: black;
+        }
+        .right{
+            flex: auto;
+            background-color: blue;
+        }
+        
+    
+    </style>
+</head>
+<body>
+<b>可透過中間黑色的長條，控管左右邊畫面比例</b>
+    <div class="layout">
+        <div class="left" id="red"></div>
+        <div class="middle" id="line"></div>
+        <div class="right"></div>
+    </div>
+    <script>
+        let line=document.querySelector("#line")
+        let red=document.querySelector("#red")
+
+        let startdrag=function(teng){
+            document.addEventListener("mousemove",drag)
+        }
+        
+        let drag=function(teng){
+            red.style.width=(teng.clientX-15)+"px"
+        }
+
+        let drop=function(teng){
+            document.removeEventListener("mousemove",drag)
+        }
+
+
+        line.addEventListener("mousedown",startdrag)
+        line.addEventListener("mouseup",drop)
+
+    
+    </script>
+</body>
+</html>

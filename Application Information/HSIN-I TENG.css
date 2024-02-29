@@ -83,9 +83,9 @@ body{
 .btn{
     display: block;
     width: 102px;
-    padding: 7px 8px;
-    margin-right: 10px;
-    background-color: rgba(3, 95, 207, 0.872);
+    padding: 5px 6px;
+    margin-right: 13px;
+    background-color: rgba(37, 117, 215, 0.872);
     border-radius: 10px;
    
     color:white ;
@@ -98,7 +98,7 @@ body{
 
 .blueborder{
     font-weight: bold;
-    border: 3px solid rgb(102, 184, 255);
+    border: 3px solid #66b8ff;
     border-radius: 20px;
     padding: 2px 7px;
 }

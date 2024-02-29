@@ -72,8 +72,20 @@ body{
 
 .title{
     font-weight: bold;
-    font-size: 17px;
-    text-decoration: underline rgba(255, 119, 0, 0.569) 4px !important;
+    font-size: 20px;
+    color: rgba(0, 8, 19, 0.867);
+}
+
+.btn{
+    background-color: rgba(3, 95, 207, 0.872);
+    border-radius: 10px;
+    padding: 7px 8px;
+    color:white ;
+    cursor:pointer;
+}
+
+.btn:hover{
+    background-color: rgba(255, 132, 44, 0.872)
 }
 
 .blueborder{
@@ -83,10 +95,14 @@ body{
     padding: 2px 7px;
 }
 
-.ul{
+.solution{
     line-height:30px;
+    padding-left: 18px;
+    margin:0px 0px 9px 0px;
 }
-    
+.dontgiveup{
+    color: rgb(213, 23, 23);
+}
 
 @media(max-width:1200px){
 

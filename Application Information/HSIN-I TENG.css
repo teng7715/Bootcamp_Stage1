@@ -40,7 +40,8 @@ body{
     max-width: 100%;
 }
 
-.contentborder1,.contentborder2{
+/*以下是兩大內文區塊的CSS*/
+.contentborder{
     background-color: rgb(255, 247, 237);
     border-radius: 20px;  
     padding: 20px 0px;  
@@ -49,24 +50,9 @@ body{
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 
-.contentborder2{
-    margin-top: 30px;
-}
 
 .content{
-    flex:none;
-    width: 45%;
-    line-height:30px;
-}
-
-.separateline{
-    flex:none;
-    width: 3%;
-}
-
-.bottomarea{
-    text-align: center;
-    width: 93% ;
+    width: 90%;
     line-height:30px;
 }
 
@@ -74,6 +60,19 @@ body{
     font-weight: bold;
     font-size: 20px;
     color: rgba(0, 8, 19, 0.867);
+    cursor: pointer;
+}
+
+i{
+    font-size: 13px;
+    opacity: 0.5;
+    transform: rotate(0deg);
+    transition: transform 0.3s;
+}
+
+
+.contentarea{
+    display: none;
 }
 
 .btnarea{
@@ -127,19 +126,6 @@ body{
 
 .myname{
     font-size: 60px;
-}
-    
-.contentborder1{
-    flex-wrap:wrap;
-}
-.content{
-    width: 90%;
-}
-.separateline{
-    width: 0%;
-}
-.bottomarea{
-    text-align: left;
 }
 }
 

@@ -40,7 +40,7 @@ body{
     max-width: 100%;
 }
 
-/*以下是兩大內文區塊的CSS*/
+
 .contentborder{
     background-color: rgb(255, 247, 237);
     border-radius: 20px;  
@@ -128,7 +128,6 @@ i{
     font-size: 60px;
 }
 }
-
 
 @media(max-width:500px){
 .myname{

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"type="text/css" href="Task_3.css"> 
+    <title>Task_3</title>
+</head>
+<body>
+    <header>
+            <div class="web_name">My Website</div>
+            <img src="burger_menu.png" class="burger_menu"/>
+            <nav>
+                <ul class="navbar_web">
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
+                    <li>Item 4</li>
+                </ul>
+                <ul class="navbar_mobile">
+                    <img src="remove_icon.png" class="remove_icon"/>
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
+                    <li>Item 4</li>
+                </ul>
+            </nav>
+    </header>
+    <div class="welcome_word">Welcome to MyHome</div>
+    <main>
+        <section>
+            <article class="p1">
+                <figure><img src="starry_night.png" class="img_starry_night" alt="The Starry Night"/></figure>
+                <figcaption class="promotion_area">
+                    <div>Promotion 1</div> 
+                </figcaption>
+            </article>
+
+            <article class="p2">
+                <figure><img src="starry_night.png" class="img_starry_night" alt="The Starry Night"/></figure>
+                <figcaption class="promotion_area">
+                    <div>Promotion 2</div> 
+                </figcaption>
+            </article>
+
+            <article class="p3">
+                <figure><img src="starry_night.png" class="img_starry_night" alt="The Starry Night"/></figure>
+                <figcaption class="promotion_area">
+                    <div>Promotion 3</div>
+                </figcaption>
+            </article>
+
+            <article class="t1">
+                <figure><img src="starry_night.png" class="img_starry_night" alt="The Starry Night"/></figure>
+                <img src="heart_icon.png" class="img_heart"/>
+                <figcaption class="title_content_area">
+                    <div class="title_content">Title 1</div>
+                </figcaption> 
+            </article>
+
+            <article class="t2">  
+                <figure><img src="starry_night.png" class="img_starry_night" alt="The Starry Night"/></figure>
+                <img src="heart_icon.png" class="img_heart"/>
+                <figcaption class="title_content_area">
+                    <div class="title_content">Title 2</div>
+                </figcaption> 
+            </article>
+
+            <article class="t3"> 
+                <figure><img src="starry_night.png" class="img_starry_night" alt="The Starry Night"/></figure>
+                <img src="heart_icon.png" class="img_heart"/>
+                <figcaption class="title_content_area">
+                    <div class="title_content">Title 3</div>
+                </figcaption> 
+            </article>
+
+            <article class="t4">  
+                <figure><img src="starry_night.png" class="img_starry_night" alt="The Starry Night"/></figure>
+                <img src="heart_icon.png" class="img_heart"/>
+                <figcaption class="title_content_area">
+                    <div class="title_content">Title 4</div>
+                </figcaption> 
+            </article>
+
+            <article class="t5">  
+                <figure><img src="starry_night.png" class="img_starry_night" alt="The Starry Night"/></figure>
+                <img src="heart_icon.png" class="img_heart"/>
+                <figcaption class="title_content_area">
+                    <div class="title_content">Title 5</div>
+                </figcaption> 
+            </article>
+
+            <article class="t6">  
+                <figure><img src="starry_night.png" class="img_starry_night" alt="The Starry Night"/></figure>
+                <img src="heart_icon.png" class="img_heart"/>
+                <figcaption class="title_content_area">
+                    <div class="title_content">Title 6</div>
+                </figcaption> 
+            </article>
+
+            <article class="t7">  
+                <figure><img src="starry_night.png" class="img_starry_night" alt="The Starry Night"/></figure>
+                <img src="heart_icon.png" class="img_heart"/>
+                <figcaption class="title_content_area">
+                    <div class="title_content">Title 7</div>
+                </figcaption> 
+            </article>
+
+            <article class="t8">  
+                <figure><img src="starry_night.png" class="img_starry_night" alt="The Starry Night"/></figure>
+                <img src="heart_icon.png" class="img_heart"/>
+                <figcaption class="title_content_area">
+                    <div class="title_content">Title 8</div>
+                </figcaption> 
+            </article>
+
+            <article class="t9">  
+                <figure><img src="starry_night.png" class="img_starry_night" alt="The Starry Night"/></figure>
+                <img src="heart_icon.png" class="img_heart"/>
+                <figcaption class="title_content_area">
+                    <div class="title_content">Title 9</div>
+                </figcaption> 
+            </article>
+
+            <article class="t10">  
+                <figure><img src="starry_night.png" class="img_starry_night" alt="The Starry Night"/></figure>
+                <img src="heart_icon.png" class="img_heart"/>
+                <figcaption class="title_content_area">
+                    <div class="title_content">Title 10</div>
+                </figcaption> 
+            </article>
+        </section>
+    </main>
+    <script>
+        let burger_menu=document.querySelector(".burger_menu")
+        let remove_icon=document.querySelector(".remove_icon")
+        let navbar_mobile=document.querySelector(".navbar_mobile")
+
+        burger_menu.addEventListener("click",showSidebar)
+        remove_icon.addEventListener("click",closeSidebar)
+        window.addEventListener("resize",innerWidthgetbig)
+
+        function showSidebar(){
+            navbar_mobile.style.display="block"
+        }
+
+        function closeSidebar(){
+            navbar_mobile.style.display="none"
+        }
+    
+        function innerWidthgetbig(){
+            if(window.innerWidth>600){
+            navbar_mobile.style.display="none"
+        }
+        }
+    </script>
+    <script>
+        //1. 執行網路連線，取得遠端提供的資料
+        async function getData(){
+            let response=await fetch("https://padax.github.io/taipei-day-trip-resources/taipei-attractions-assignment-1")
+            let touristData=await response.json()
+
+            
+            touristSpots=touristData.data.results //用變數縮短取得資料的時需輸入的文字
+
+            //2. 寫正則表達式:把亂七八糟的ＵＲＬ整裡比對好
+            const rule=/(https?:\/\/\S+?\.(?:jpg|jpeg|png|gif))/gi 
+
+            for(let i=0;i<touristSpots.length;i++){
+                let string=touristSpots[i]["filelist"]
+                let mo=string.match(rule)
+                touristSpots[i]["filelist"]=mo
+            }
+        
+            //以下迴圈目的：將每個figure標籤內的舊圖片移除後，換成對應到的台北市景點圖片
+            let figureElements=document.querySelectorAll("figure")
+
+            figureElements.forEach( 
+                function(figure,index){
+        
+                    let newImage=document.createElement("img")
+                    newImage.className="img_starry_night"
+                    newImage.alt="景點圖片"
+                    newImage.src=`${touristSpots[index]["filelist"][0]}`
+                 
+
+                    let imgToRomove=figure.querySelector("img")
+
+                    figure.removeChild(imgToRomove)
+                    figure.appendChild(newImage)
+                    
+                }
+            )
+
+           //以下迴圈目的：將每個figcaption標籤內的舊圖片移除後，換成對應到的台北市景點名稱
+            let figcaptionElements=document.querySelectorAll("figcaption")
+
+            figcaptionElements.forEach(
+                function(figcaption,index){
+
+                    let newContent=document.createElement("div") 
+                    newContent.textContent=`${touristSpots[index]["stitle"]}` 
+                    if(index>=3){
+                        newContent.className="title_content"
+                    }
+
+                    let divToRomove=figcaption.querySelector("div")
+
+                    figcaption.removeChild(divToRomove)
+                    figcaption.appendChild(newContent)
+                }
+            )
+        }
+        
+        getData()
+
+    </script>
+</body>
+</html>

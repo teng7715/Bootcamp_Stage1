@@ -1,0 +1,46 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+header{
+    background-color: rgb(33, 45, 58);
+    color: white;
+    height: 90px;
+    font-size: 20px;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}
+
+main {
+    text-align: center;
+}
+
+.topic{
+    margin-top: 25px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.account_area{
+    margin-top: 10px;
+    margin-bottom: 8px;
+}
+
+.agree_term_area{
+    margin-top:8px;
+    margin-bottom: 10px;
+}
+
+button{
+    padding-block: 5px;
+    padding-inline: 10px;
+}
+
+/*以下為error畫面用的CSS*/
+
+.message{
+    margin-block: 10px;
+    font-size: 18px;
+}

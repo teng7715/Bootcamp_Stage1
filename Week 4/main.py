@@ -16,7 +16,7 @@ async def read_home(request:Request):
 
     signed_in=request.session.get("SIGNED-IN", False)  #判斷request.session裡面有沒有登入的資料，有的話拿出來，沒有的話，預設False
     if signed_in:  #如果request.session是True,就導他去登入成功頁面
-        return RedirectResponse("/member/")
+        return RedirectResponse("/member")
     else:
         return templates.TemplateResponse(
         "home.html",{"request": request}) 

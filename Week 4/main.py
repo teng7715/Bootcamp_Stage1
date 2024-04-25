@@ -22,20 +22,20 @@ async def read_home(request:Request):
         "home.html",{"request": request}) 
 
 
-@app.post("/signin/")
+@app.post("/signin")
 async def signin(request:Request, username:str=Form(None), password:str=Form(None)):
 
     if not username or not password:
-        return RedirectResponse("/error/?message=請輸入帳號、密碼",status_code=303)
+        return RedirectResponse("/error?message=請輸入帳號、密碼",status_code=303)
 
     if username=="test" and password=="test":
         request.session["SIGNED-IN"]=True
-        return RedirectResponse("/member/",status_code=303)
+        return RedirectResponse("/member",status_code=303)
     else:
-        return RedirectResponse("/error/?message=帳號、或密碼輸入錯誤",status_code=303)
+        return RedirectResponse("/error?message=帳號、或密碼輸入錯誤",status_code=303)
 
 
-@app.get("/member/",response_class=HTMLResponse) 
+@app.get("/member",response_class=HTMLResponse) 
 async def open_success(request:Request):
     signed_in=request.session.get("SIGNED-IN", False)  #判斷request.session裡面有沒有登入的資料，有的話拿出來，沒有的話，預設False
     if signed_in:  #如果request.session是True,就導他去登入成功頁面
@@ -45,7 +45,7 @@ async def open_success(request:Request):
         return RedirectResponse("/") 
 
 
-@app.get("/error/",response_class=HTMLResponse)
+@app.get("/error",response_class=HTMLResponse)
 async def open_error(request:Request,message:str):
     return templates.TemplateResponse(
         "error.html",{"request": request,"message": message})

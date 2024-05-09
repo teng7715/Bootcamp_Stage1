@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='/styles.css') }}" >
+    <title>失敗頁面</title>
+</head>
+<body>
+    <header>失敗頁面</header>
+    <main>
+        <div class="main_word">{{message}}</div>
+        <a href="/">返回首頁</a>
+    </main>
+</body>
+</html>

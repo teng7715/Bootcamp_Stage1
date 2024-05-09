@@ -1,0 +1,67 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+header{
+    background-color: rgb(33, 45, 58);
+    color: white;
+    height: 90px;
+    font-size: 20px;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}
+
+main{
+    text-align: center;
+}
+
+.topic{
+    margin-top: 25px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.form_area{
+    margin-bottom: 25px;
+}
+
+.space_area{
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 8px;
+}
+
+button{
+    padding-block: 5px;
+    padding-inline: 10px;
+}
+
+/* 以下為member頁、error頁使用到的CSS */
+
+.main_word{
+    margin-block: 10px;
+    font-size: 18px;
+}
+
+a{
+    display: block;
+    margin-bottom: 25px;
+}
+
+.message_area{
+    margin-block:25px;
+}
+
+.message_content_space{
+    margin-block:10px;
+}
+
+.name{
+    font-weight: bold;
+}
+
+.delete_button_form{
+    display: inline;
+}

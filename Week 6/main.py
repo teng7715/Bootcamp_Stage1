@@ -41,15 +41,15 @@ async def signup(request:Request,name:str=Form(),username:str=Form(),password:st
 
     request.session["SIGNED-IN"]=False #註冊帳號的流程不是登入，所以SIGNED-IN狀態保險起見設定為False
 
-    mycursor.execute("select username from member")
-    username_list=[username[0] for username in mycursor.fetchall()] #將資料表中，所有username的資料，透過迴圈放入陣列
+    mycursor.execute("select username from member where username=%s",(username,))
+    check_result=mycursor.fetchone()
 
-    if username in username_list: 
+    if check_result: 
         #如果使用者輸入的username跟資料庫裡的username重複 1.導到失敗頁
         return RedirectResponse("/error?message=此帳號名稱已被使用，請改設定其他名稱",status_code=303)
 
     else: 
-        #如果使用者輸入的username沒有跟資料庫裡的username重複 1.將資料寫入資料庫 2.導回首頁
+        #如果使用者輸入的username『沒有』跟資料庫裡的username重複 1.將資料寫入資料庫 2.導回首頁
         mycursor.execute("insert into member (name,username,password) values (%s,%s,%s)",(name,username,password))
         mydb.commit()
         return RedirectResponse("/",status_code=303)
@@ -58,28 +58,24 @@ async def signup(request:Request,name:str=Form(),username:str=Form(),password:st
 @app.post("/signin")
 async def signin(request:Request,username:str=Form(),password:str=Form()):
 
-    mycursor.execute("select username,password from member")
-    username_password_dict={key:value for key,value in mycursor.fetchall()} #將每一組帳號密碼變成字典組合
-   
-    if username in username_password_dict and password == username_password_dict[username]: 
+    mycursor.execute("select id,name,username,password from member where username=%s and password=%s",(username,password))
+    check_result=mycursor.fetchone()
+
+    if check_result: 
         #如果帳號和密碼都與資料庫某筆資料相符
             #1.將使用者姓名、使用者id提取出來後，寫入session中
             #2.將SIGNED-IN的狀態改為True
             #3.導到會員頁
 
-        #將這登入帳號的使用者姓名資料從MySQL中取出
-        mycursor.execute("select name from member where username=%s",(username,)) 
-        name=mycursor.fetchone()                    
+        name=check_result[1]
+        id=check_result[0]
 
-        #將這登入帳號的id資料從MySQL中取出
-        mycursor.execute("select id from member where username=%s",(username,))
-        id=mycursor.fetchone()                   
-
-        request.session["name"]=name[0]
-        request.session["id"]=id[0]
+        request.session["name"]=name
+        request.session["id"]=id
         request.session["SIGNED-IN"]=True
 
         return RedirectResponse("/member",status_code=303)
+
     else: 
         #如果輸入的帳號密碼錯誤或不存在 1.保險起見將SIGNED-IN的狀態改為False 2.導去錯誤頁面
         request.session["SIGNED-IN"]=False
